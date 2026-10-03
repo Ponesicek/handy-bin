@@ -109,7 +109,9 @@ jobs:
             srpm=$(find "$topdir/SRPMS" -maxdepth 1 -name '*.src.rpm' -print -quit)
             test -n "$srpm"
             copr build ponesicek/handy-bin \
+              --chroot "fedora-43-$arch" \
               --chroot "fedora-44-$arch" \
+              --chroot "fedora-45-$arch" \
               "$srpm"
           done
 
